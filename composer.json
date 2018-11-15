@@ -1,5 +1,5 @@
 {
-    "name": "tohtamysh/laravel-phpbb-bridge",
+    "name": "aledefreitas/laravel-phpbb-bridge",
     "description": "Authentication module for Laravel 5.4 and phpBB 3.2",
     "keywords": ["phpbb", "phpbb3", "laravel", "laravel5"],
     "license": "MIT",
