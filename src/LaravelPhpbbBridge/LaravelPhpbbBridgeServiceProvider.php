@@ -23,7 +23,7 @@ class LaravelPhpbbBridgeServiceProvider extends ServiceProvider
             __DIR__.'/../config/config.php' => config_path('laravel-phpbb-bridge.php'),
         ], 'config');
 
-        Route::group(['middleware' => ['web']], function () {
+        Route::group(['middleware' => ['api']], function () {
             Route::get('/auth-bridge/login', 'Tohtamysh\LaravelPhpbbBridge\Controllers\ApiController@getSession');
             Route::post('/auth-bridge/login', 'Tohtamysh\LaravelPhpbbBridge\Controllers\ApiController@doLogin');
             Route::delete('/auth-bridge/login', 'Tohtamysh\LaravelPhpbbBridge\Controllers\ApiController@doLogout');
