@@ -5,6 +5,7 @@ namespace Tohtamysh\LaravelPhpbbBridge\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use JWTAuth;
 
 class ApiController extends Controller
 {
@@ -29,6 +30,9 @@ class ApiController extends Controller
             $result = ['username' => Auth::client()->user()[config('laravel-phpbb-bridge.user_model.username_column')]];
         } elseif (!config('laravel-phpbb-bridge.client_auth') && Auth::check()) {
             $result = ['username' => Auth::user()[config('laravel-phpbb-bridge.user_model.username_column')]];
+        } elseif ($token = JWTAuth::parseToken()) {
+            $user = $token->authenticate()->toArray();
+            $result = ['username' => $user[config('laravel-phpbb-bridge.user_model.username_column')]];
         } else {
             $result = [];
         }
