@@ -27,12 +27,26 @@ class ApiController extends Controller
     public function getSession()
     {
         if (config('laravel-phpbb-bridge.client_auth') && Auth::client()->check()) {
-            $result = ['username' => Auth::client()->user()[config('laravel-phpbb-bridge.user_model.username_column')]];
+            $user = Auth::client()->user();
+            $result = [
+                'username' => $user[config('laravel-phpbb-bridge.user_model.username_column')],
+                'privilege_group' => $user['privilege_group'],
+                'email' => $user['email'],
+            ];
         } elseif (!config('laravel-phpbb-bridge.client_auth') && Auth::check()) {
-            $result = ['username' => Auth::user()[config('laravel-phpbb-bridge.user_model.username_column')]];
-        } elseif ($token = JWTAuth::parseToken()) {
-            $user = $token->authenticate()->toArray();
-            $result = ['username' => $user[config('laravel-phpbb-bridge.user_model.username_column')]];
+            $user = Auth::user();
+            $result = [
+                'username' => $user[config('laravel-phpbb-bridge.user_model.username_column')],
+                'privilege_group' => $user['privilege_group'],
+                'email' => $user['email'],
+            ];
+        } elseif ($token = JWTAuth::getToken()) {
+            $user = JWTAuth::parseToken()->authenticate()->toArray();
+            $result = [
+                'username' => $user[config('laravel-phpbb-bridge.user_model.username_column')],
+                'privilege_group' => $user['privilege_group'],
+                'email' => $user['email'],
+            ];
         } else {
             $result = [];
         }
