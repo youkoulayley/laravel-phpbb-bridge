@@ -2,13 +2,12 @@
   "name": "laravel/bridgebb",
   "type": "phpbb-extension",
   "description": "Bridging that auth from laravel 5",
-  "homepage": "https://github.com/tohtamysh/laravel-phpbb-bridge",
+  "homepage": "https://github.com/youkoulayley/laravel-phpbb-bridge",
   "version": "1.0.0",
   "time": "2017-06-08",
   "license": "MIT",
   "authors": [{
-    "name": "Tohtamysh",
-    "email": "tohtamysh@gmail.com"
+    "name": "Youkoulayley"
   }],
   "require": {
     "php": ">=5.3.3"

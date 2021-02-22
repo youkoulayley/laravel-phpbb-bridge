@@ -1,6 +1,6 @@
 <?php
 
-namespace Tohtamysh\LaravelPhpbbBridge;
+namespace Youkoulayley\LaravelPhpbbBridge;
 
 use Illuminate\Support\ServiceProvider;
 use Route;
@@ -24,9 +24,9 @@ class LaravelPhpbbBridgeServiceProvider extends ServiceProvider
         ], 'config');
 
         Route::group(['middleware' => ['api']], function () {
-            Route::get('/auth-bridge/login', 'Tohtamysh\LaravelPhpbbBridge\Controllers\ApiController@getSession');
-            Route::post('/auth-bridge/login', 'Tohtamysh\LaravelPhpbbBridge\Controllers\ApiController@doLogin');
-            Route::delete('/auth-bridge/login', 'Tohtamysh\LaravelPhpbbBridge\Controllers\ApiController@doLogout');
+            Route::get('/auth-bridge/login', 'Youkoulayley\LaravelPhpbbBridge\Controllers\ApiController@getSession');
+            Route::post('/auth-bridge/login', 'Youkoulayley\LaravelPhpbbBridge\Controllers\ApiController@doLogin');
+            Route::delete('/auth-bridge/login', 'Youkoulayley\LaravelPhpbbBridge\Controllers\ApiController@doLogout');
         });
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tohtamysh\LaravelPhpbbBridge\Controllers;
+namespace Youkoulayley\LaravelPhpbbBridge\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;

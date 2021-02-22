@@ -2,24 +2,24 @@
 
 For phpBB < 3.2 see [CallMeNP/lara-auth-bridge](https://github.com/CallMeNP/lara-auth-bridge) Offers a simple API for the included custom phpBB authentication module for phpBB(3.0, 3.1) and Laravel 5.
 
-[![Latest Stable Version](https://poser.pugx.org/tohtamysh/laravel-phpbb-bridge/v/stable)](https://packagist.org/packages/tohtamysh/laravel-phpbb-bridge) [![License](https://poser.pugx.org/tohtamysh/laravel-phpbb-bridge/license)](https://packagist.org/packages/tohtamysh/laravel-phpbb-bridge)
+[![Latest Stable Version](https://poser.pugx.org/Youkoulayley/laravel-phpbb-bridge/v/stable)](https://packagist.org/packages/Youkoulayley/laravel-phpbb-bridge) [![License](https://poser.pugx.org/Youkoulayley/laravel-phpbb-bridge/license)](https://packagist.org/packages/Youkoulayley/laravel-phpbb-bridge)
 
 ### Installation
 #### Laravel
 ##### run composer
 ``` php
-composer require tohtamysh/laravel-phpbb-bridge
+composer require youkoulayley/laravel-phpbb-bridge
 ```
 ##### add service provider
 Register the Service Provider by adding it to your project's providers array in app.php
 ``` php
 'providers' => array(
-    Tohtamysh\LaravelPhpbbBridge\LaravelPhpbbBridgeServiceProvider::class,
+    Youkoulayley\LaravelPhpbbBridge\LaravelPhpbbBridgeServiceProvider::class,
 );
 ```
 ##### publish config file
 ``` php
-artisan vendor:publish --provider="Tohtamysh\LaravelPhpbbBridge\LaravelPhpbbBridgeServiceProvider"
+artisan vendor:publish --provider="Youkoulayley\LaravelPhpbbBridge\LaravelPhpbbBridgeServiceProvider"
 ```
 ##### edit config
 Change configs config/laravel-phpbb-bridge.php
